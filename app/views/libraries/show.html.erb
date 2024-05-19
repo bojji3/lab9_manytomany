@@ -1,0 +1,11 @@
+<h1><%= @library.name %></h1>
+<p>Location: <%= @library.location %></p>
+<h2>Books</h2>
+<ul>
+  <% @library.books.each do |book| %>
+    <li>
+      <%= link_to book.name, book_path(book) %> -
+      Authors: <%= book.authors.map { |author| link_to author.name, author_path(author) }.join(", ").html_safe %>
+    </li>
+  <% end %>
+</ul>

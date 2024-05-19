@@ -1,0 +1,10 @@
+<h1><%= @current_author.name %></h1>
+<p>Email: <%= @current_author.email_address %></p>
+<p>Contact Number: <%= @current_author.contact_number %></p>
+<h2>Books</h2>
+<ul>
+  <% @current_author.books.each do |book| %>
+    <li><%= link_to book.name, book_path(book) %></li>
+  <% end %>
+</ul>
+
